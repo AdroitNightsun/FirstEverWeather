@@ -174,7 +174,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -184,7 +185,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -350,10 +352,166 @@ template {
 
 /* now main CSS */
 
-*{
-  
+* {
+  color: white;
 }
 
-body{
-    background-color: rgba(0, 0, 0, 0.514);
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.705);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: url(pent.jpg);
+  background-size: cover;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0px 20px 20px 9px rgb(0 0 0 / 57%);
+  width: 90%;
+  max-width: 800px;
+}
+
+.insearch_section{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+
+  /* flex-direction: r; */
+}
+
+.input_border{
+  padding: 0rem; /* border thickness */
+  border-radius: 10px;
+  background: linear-gradient(270deg, #ffb224, #e34ba9, #0072f5, #95f3d9);
+  display: inline-block;
+  transition: all 0.7s ease;
+  animation: animation-aagePeeche 10s ease infinite;
+  background-size: 300% 300%;
+  max-width: 27rem;
+  flex: 1;
+}
+
+.input_border:hover{
+  filter:hue-rotate(100deg);
+}
+
+@keyframes animation-aagePeeche {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.search_btn{
+  background: linear-gradient(-45deg, #ffb224, #e34ba9, #0072f5, #95f3d9);
+  color: white;
+  border: none;
+  width: 3.125rem; /* Fixed width */
+  height: 3.125rem; /* Fixed height */
+  border-radius: 0.5rem;
+  font-size: 2.5rem; /* You can increase this now */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  animation: animation-aagePeeche 10s ease infinite;
+  background-size: 300% 300%;
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 42%);
+  box-sizing: border-box;
+  display: flex; /* Center the + symbol */
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.search_btn:hover{
+  filter:hue-rotate(100deg);
+}
+
+.search_btn svg path{
+  fill: white;
+}
+
+input{
+  flex: 1;
+  padding: 0.8rem;
+  /* border: 2px solid #eee; */
+  border: none;
+  background: #383a3b;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.3s ease;
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 42%);
+  box-sizing: border-box;
+}
+
+input::placeholder{
+  color: rgba(255, 255, 255, 0.637);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+}
+
+input:focus{
+  outline: none;
+}
+
+.gps{
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gps_btn{
+  border-radius: 10px;
+  background: linear-gradient(270deg, #ffb224, #e34ba9, #0072f5, #95f3d9);
+  cursor: pointer;
+  transition: all 0.7s ease;
+  animation: animation-aagePeeche 10s ease infinite;
+  background-size: 300% 300%;
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 42%);
+  box-sizing: border-box;
+  display: flex; /* Center the + symbol */
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: none;
+  transition: all 0.8s ease;
+  font-weight: 600;
+}
+
+.gps_btn:hover{
+  transform: scale(1.1);
+  filter:hue-rotate(100deg);
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 42%);
+}
+
+.current_weather{
+  background-color: #383a3b;
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.current_weather img{
+
 }

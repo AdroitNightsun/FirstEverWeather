@@ -376,7 +376,7 @@ body {
   backdrop-filter: blur(15px);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0px 20px 20px 9px rgb(0 0 0 / 57%);
+  box-shadow: 0px 20px 20px 9px rgb(0, 0, 0);
   width: 90%;
   max-width: 800px;
   /* align-items: center;
@@ -485,7 +485,7 @@ input:focus{
 
 .gps_btn{
   border-radius: 10px;
-  background: linear-gradient(270deg, #ffb224, #e34ba9, #0072f5, #95f3d9);
+  background: linear-gradient(-45deg, #ffb224, #e34ba9, #0072f5, #95f3d9);
   cursor: pointer;
   transition: all 0.7s ease;
   animation: animation-aagePeeche 10s ease infinite;

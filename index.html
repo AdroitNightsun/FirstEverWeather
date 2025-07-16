@@ -16,7 +16,7 @@
         <div class="input_border">
           <input type="search" placeholder="enter your location here" class="search_input"/>
         </div>
-        <button class="search_btn">
+        <button class="search_btn" onclick="checkWeather()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -34,50 +34,8 @@
       <section class="gps">
         <button class="gps_btn">use current location</button>
       </section>
-      <div class="current_weather">
-        <h1 class="location">Gurgaon</h1>
-        <div class="meds">
-          <img src="sunny.png" alt="" />
-          <div class="temp_main">
-            <h1>30°c</h1>
-            <h3>40°c</h3>
-          </div>
-        </div>
-      </div>
-      <div class="future_weather">
-        <ul class="fw_list">
-          <li class="one">
-            <div class="day">mon</div>
-            <img src="clouds.png" alt="" />
-            <div class="temp_one">30°c / 40°c</div>
-          </li>
-          <li class="two">
-            <div class="day">mon</div>
-            <img src="clouds.png" alt="" />
-            <div class="temp_one">30°c / 40°c</div>
-          </li>
-          <li class="three">
-            <div class="day">mon</div>
-            <img src="clouds.png" alt="" />
-            <div class="temp_one">30°c / 40°c</div>
-          </li>
-          <li class="four">
-            <div class="day">mon</div>
-            <img src="clouds.png" alt="" />
-            <div class="temp_one">30°c / 40°c</div>
-          </li>
-          <li class="five">
-            <div class="day">mon</div>
-            <img src="clouds.png" alt="" />
-            <div class="temp_one">30°c / 40°c</div>
-          </li>
-          <li class="six">
-            <div class="day">mon</div>
-            <img src="clouds.png" alt="" />
-            <div class="temp_one">30°c / 40°c</div>
-          </li>
-        </ul>
-      </div>
+      <div class="cuntainer"></div>
     </div>
+    <script src="hot.js"></script>
   </body>
 </html>

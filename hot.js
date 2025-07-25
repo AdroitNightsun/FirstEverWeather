@@ -1,4 +1,4 @@
-const apiKey = "0a6a1fd22a2c4a5439899586da79a51f";
+const apiKey = config.apiKey;
 const currentapiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 const currentapiUrlCoords = "https://api.openweathermap.org/data/2.5/weather?lat=";
 const forcastapiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=";
@@ -26,11 +26,12 @@ GpsBtn.addEventListener("click", function() {
 // Helper function to get weather icon
 function getWeatherIcon(weatherMain) {
   const weather = weatherMain.toLowerCase();
-  if (weather === "clouds") return "clouds.png";
+  if (weather === "clouds") return "light_rain.png";
   if (weather === "rain") return "rain.png";
   if (weather === "snow") return "snow.png";
   if (weather === "haze" || weather === "mist") return "haze.png";
   if (weather === "clear") return "sunny.png";
+  if (weather === "thunderstorm") return "thunder.png";
   return "sunny.png";
 }
 
@@ -80,7 +81,7 @@ async function getCurrentLocationWeather() {
         
       } catch (error) {
         console.error("Error fetching weather data:", error);
-        document.querySelector(".cuntainer").innerHTML = `
+        document.getElementById("weatherContainer").innerHTML = `
             <div class="current_weather">
                 <h1 class="location">Error: Could not fetch weather data</h1>
                 <p>Please check your connection and try again.</p>
@@ -127,6 +128,18 @@ async function getCurrentLocationWeather() {
 
 // Function to process and display weather data
 function displayWeatherData(currentdata, forcastdata) {
+    const weatherContainer = document.getElementById("weatherContainer");
+    
+    // Check if API returned valid data
+    if (!currentdata || !currentdata.weather || !forcastdata || !forcastdata.list) {
+        weatherContainer.innerHTML = `
+            <div class="current_weather">
+                <h1 class="location">Error: Invalid weather data</h1>
+                <p>Please try again later.</p>
+            </div>
+        `;
+        return;
+    }
     const location = currentdata.name + ", " + currentdata.sys.country;
     
     // Current weather
@@ -196,7 +209,7 @@ function displayWeatherData(currentdata, forcastdata) {
         `;
     });
 
-    document.querySelector(".cuntainer").innerHTML = `
+    weatherContainer.innerHTML = `
         <div class="current_weather">
             <h1 class="location">${location}</h1>
             <div class="meds">
@@ -243,7 +256,7 @@ async function checkWeather(){
         
     } catch (error) {
         console.error('Error fetching weather data:', error);
-        document.querySelector(".cuntainer").innerHTML = `
+        document.getElementById("weatherContainer").innerHTML = `
             <div class="current_weather">
                 <h1 class="location">Error: Could not fetch weather data</h1>
                 <p>Please check the location name and try again.</p>
